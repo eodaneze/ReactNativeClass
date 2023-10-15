@@ -1,63 +1,17 @@
-import React from 'react'
-import {View, Text, SafeAreaView, StyleSheet} from 'react-native'
-import { Feather } from '@expo/vector-icons';
-
+import React from 'react';
+import {View, StyleSheet} from 'react-native'
+import CurrentWeather from './src/components/CurrentWeather';
 const App = () => {
   return(
-    <SafeAreaView style={styles.wrapper}>
-
-    <View style={styles.container}>
-      <Feather name="sun" size={108} color="black" />
-        <Text style={styles.temp}>6</Text>
-        <Text style={styles.feels}>Feels like 5</Text>
-        <View style={styles.highLowWrapper}>
-
-          <Text style={styles.highLow}>High: 8 </Text>
-          <Text style={styles.highLow}>Low: 6</Text>
-        </View>
-    </View>
-      <View style={styles.bodyWrapper}>
-          <Text style={styles.description}>Its sunny</Text>
-          <Text style={styles.message}>Its perfect t-shirt weather</Text>
-      </View>
-    </SafeAreaView>
+     <View style={Styles.container}>
+      <CurrentWeather />
+     </View>
   )
 }
 
-const styles = StyleSheet.create({
-  container:{
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  wrapper:{
-    backgroundColor: 'pink',
+const Styles = StyleSheet.create({
+  container: {
     flex: 1
-  },
-  temp: {
-    color: 'black',
-    fontSize: 48
-  },
-  feels:{
-    fontSize: 30,
-    color: 'black'
-  },
-  highLow:{
-    fontSize: 20,
-    color: 'black'
-  },
-  highLowWrapper: {
-    flexDirection: 'row'
-  },
-  bodyWrapper:{
-    justifyContent: 'flex-end',
-    alignItems: 'flex-start'
-  },
-  description:{
-    fontSize: 40, 
-  },
-  message: {
-    fontSize: 30
   }
 })
 export default App
