@@ -45,9 +45,11 @@ const UpComingWeather = () => {
   const renderItem = ({item}) => (
        <ListItem condition={item.weather[0].main} dt_txt={item.dt_txt} min={item.main.temp_min} max={item.main.temp_max}/>
   )
+
+  const {container, image} = styles
   return (
-     <SafeAreaView style={styles.container}>
-        <ImageBackground source={require('../../assets/cloud.jpg')} style={styles.image}>
+     <SafeAreaView style={container}>
+        <ImageBackground source={require('../../assets/cloud.jpg')} style={image}>
 
       <Text>Upcoming Weather</Text>
         <FlatList 
