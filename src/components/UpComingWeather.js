@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, SafeAreaView, StyleSheet, FlatList} from 'react-native'
+import {View, Text, SafeAreaView, StyleSheet, FlatList, StatusBar} from 'react-native'
 import {Feather} from '@expo/vector-icons'
 const DATA = [
   {
@@ -13,7 +13,31 @@ const DATA = [
         main: 'Clear'
       }
     ]
-  }
+  },
+  {
+    dt_txt: "2023-02-18 13:00:00",
+    main: {
+      temp_max: 9.55,
+      temp_min: 4.55,
+    },
+    weather: [
+      {
+        main: 'Clear'
+      }
+    ]
+  },
+  {
+    dt_txt: "2023-02-18 18:00:00",
+    main: {
+      temp_max: 9.55,
+      temp_min: 4.55,
+    },
+    weather: [
+      {
+        main: 'Clear'
+      }
+    ]
+  },
 ]
 
 const Item = (props) => {
@@ -33,10 +57,11 @@ const UpComingWeather = () => {
   )
   return (
      <SafeAreaView style={styles.container}>
-        <Text>Upcoming Weather</Text>
+      <Text>Upcoming Weather</Text>
         <FlatList 
           data={DATA}
           renderItem={renderItem}
+          keyExtractor={item=>item.dt_txt}
         />
      </SafeAreaView>
   )
@@ -44,7 +69,8 @@ const UpComingWeather = () => {
 
 const styles = StyleSheet.create({
     container:{
-        flex: 1
+        flex: 1,
+        marginTop: StatusBar.currentHeight || 0,
     }
 })
 export default UpComingWeather
