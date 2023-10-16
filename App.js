@@ -1,14 +1,11 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native'
-import CurrentWeather from './src/components/CurrentWeather';
-import UpComingWeather from './src/components/UpComingWeather';
-import OurChild from './src/components/OurChild';
+import CurrentWeather from './src/screens/CurrentWeather';
+import UpComingWeather from './src/screens/UpComingWeather';
 const App = () => {
   return(
      <View style={Styles.container}>
-            <OurChild message={"Hello"}/>
-            <OurChild message={"I am Daniel"}/>
-            <OurChild message={"I am Code"}/>
+            <UpComingWeather />
      </View>
   )
 }
