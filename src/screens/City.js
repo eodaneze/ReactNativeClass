@@ -1,12 +1,11 @@
 import React from 'react'
 import { SafeAreaView, Text, StyleSheet, StatusBar, ImageBackground, View, } from 'react-native';
-import {Feather} from '@expo/vector-icons'
 import IconText from '../components/IconText';
 const City = () => {
-    const {cityName, cityText, countryName, rowLayout, populationWrapper, riseSetWrapper} = styles
+    const {container, cityName, cityText, countryName, rowLayout, populationWrapper, riseSetWrapper, riseSetText, imageLayout} = styles
     return(
-        <SafeAreaView style={styles.container}>
-            <ImageBackground source={require('../../assets/city.jpg')} style={styles.imageLayout}>
+        <SafeAreaView style={container}>
+            <ImageBackground source={require('../../assets/city.jpg')} style={imageLayout}>
 
              <Text style={[cityName, cityText]}>London</Text>
              <Text style={[countryName, cityText]}>Uk</Text>
@@ -14,8 +13,8 @@ const City = () => {
                  <IconText iconName={'user'} iconColor={'red'} bodyText={'800'} bodyTextStyles={styles.populationText}/>
              </View>
              <View style={[riseSetWrapper, rowLayout]}>
-                <IconText iconName={'sunrise'} iconColor={'white'} bodyText={'14:12:23am'} bodyTextStyles={styles.riseSetText}/>
-                <IconText iconName={'sunset'} iconColor={'white'} bodyText={'17:15:43pm'} bodyTextStyles={styles.riseSetText}/>
+                <IconText iconName={'sunrise'} iconColor={'white'} bodyText={'14:12:23am'} bodyTextStyles={riseSetText}/>
+                <IconText iconName={'sunset'} iconColor={'white'} bodyText={'17:15:43pm'} bodyTextStyles={riseSetText}/>
              </View>
             </ImageBackground>
         </SafeAreaView>
