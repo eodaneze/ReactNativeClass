@@ -25,8 +25,8 @@ const City = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-        marginTop: StatusBar.currentHeight || 0
+        // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        // marginTop: StatusBar.currentHeight || 0
     },
     imageLayout:{
         flex: 1
