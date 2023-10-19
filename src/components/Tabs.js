@@ -12,7 +12,19 @@ const Tabs = () => {
   return (
     <Tab.Navigator screenOptions={{
         tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray'
+        tabBarInactiveTintColor: 'gray',
+        tabBarStyle:{
+            backgroundColor: 'lightblue'
+        },
+        headerStyle: {
+             backgroundColor: 'lightblue'
+        },
+        headerTitleStyle:{
+            fontWeight: 'bold',
+            fontSize: 25,
+            color: 'tomato',
+            textAlign: 'center'
+        }
      }}>
         <Tab.Screen name={'Current'} component={CurrentWeather} options={{
            tabBarIcon: ({focused}) => (<Feather name={'droplet'} size={25} color={focused ? 'tomato' : 'black'}/>)
